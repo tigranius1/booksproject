@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить заказчика</title>
+</head>
+<body>
+    <h1>Добавить нового заказчика</h1>
+
+    <a href="{% url 'customer_list' %}">Назад к списку</a>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <div>
+            <label>Фамилия заказчика:</label>
+            {{ form.name }}
+        </div>
+
+        <div>
+            <label>Выберите книги:</label>
+            {{ form.books }}
+        </div>
+
+        <button type="submit">Сохранить заказчика</button>
+    </form>
+</body>
+</html>
